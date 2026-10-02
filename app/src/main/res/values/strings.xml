@@ -28,9 +28,48 @@
     <string name="detail_edit">Editar</string>
     <string name="detail_delete">Eliminar</string>
     <string name="detail_error_not_available">Producto no disponible</string>
-    <string name="detail_delete_confirm">¿Eliminar este producto?</string>
-    <string name="detail_edit_toast">Función de edición (placeholder de administrador)</string>
+    <string name="detail_delete_confirm">¿Estás seguro de eliminar este producto?</string>
     <string name="detail_delete_toast">Producto eliminado (simulado por Fake Store API)</string>
     <string name="content_desc_product_image">Imagen del producto</string>
     <string name="content_desc_back">Regresar</string>
+
+    <!-- US08: eliminar -->
+    <string name="detail_deleting">Eliminando…</string>
+    <string name="detail_delete_error">No se pudo eliminar el producto. Inténtalo de nuevo.</string>
+
+    <!-- Comunes a US06 / US07 / US08 -->
+    <string name="error_forbidden">No tienes permisos para realizar esta acción.</string>
+    <string name="error_network">No hay conexión a internet. Verifica tu red e inténtalo de nuevo.</string>
+    <string name="error_generic">Ocurrió un error. Inténtalo de nuevo.</string>
+
+    <!-- US06: botón flotante -->
+    <string name="fab_add_product">Agregar producto</string>
+
+    <!-- US06 / US07: formulario -->
+    <string name="form_title_create">Agregar producto</string>
+    <string name="form_title_edit">Editar producto</string>
+    <string name="form_hint_title">Título</string>
+    <string name="form_hint_price">Precio</string>
+    <string name="form_hint_description">Descripción</string>
+    <string name="form_hint_image">URL de la imagen</string>
+    <string name="form_hint_category">Categoría</string>
+    <string name="form_save">Guardar</string>
+    <string name="form_save_changes">Guardar cambios</string>
+    <string name="form_saving">Guardando…</string>
+    <string name="form_cancel">Cancelar</string>
+
+    <!-- Validaciones locales -->
+    <string name="form_error_title_required">El título es obligatorio</string>
+    <string name="form_error_price_required">El precio es obligatorio</string>
+    <string name="form_error_price_invalid">Ingresa un precio numérico mayor a 0 (ej. 19.99)</string>
+    <string name="form_error_description_required">La descripción es obligatoria</string>
+    <string name="form_error_image_required">La URL de la imagen es obligatoria</string>
+    <string name="form_error_image_invalid">Ingresa una URL válida que inicie con http:// o https://</string>
+    <string name="form_error_category_required">Selecciona una categoría</string>
+
+    <!-- Resultados -->
+    <string name="form_created_title">Producto creado</string>
+    <string name="form_created_message">El producto se registró correctamente con el ID: %1$d\n\nNota: Fake Store API solo simula la creación, por lo que el producto no aparecerá en el catálogo.</string>
+    <string name="form_updated_toast">Producto actualizado (Simulación)</string>
+    <string name="dialog_ok">Aceptar</string>
 </resources>

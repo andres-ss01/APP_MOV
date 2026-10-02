@@ -14,6 +14,8 @@ const val ALL_CATEGORIES = "__ALL__"
 /**
  * ViewModel del catálogo. Cubre US03 (listado general + loading + error) y US04
  * (obtención de categorías, aplicación y remoción de filtro).
+ *
+ * Pide la lista de productos al repositorio y notifica a la pantalla cuando los datos están listos.
  */
 class CatalogViewModel(
     private val repository: ProductRepository = ProductRepository()

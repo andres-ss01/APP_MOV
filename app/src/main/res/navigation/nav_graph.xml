@@ -14,6 +14,11 @@
         <action
             android:id="@+id/action_catalog_to_detail"
             app:destination="@id/productDetailFragment" />
+
+        <!-- US06: FAB -> formulario en modo "crear" -->
+        <action
+            android:id="@+id/action_catalog_to_form"
+            app:destination="@id/productFormFragment" />
     </fragment>
 
     <fragment
@@ -25,6 +30,29 @@
         <argument
             android:name="productId"
             app:argType="integer" />
+
+        <!-- US07: botón Editar -> formulario en modo "editar" (con el producto actual) -->
+        <action
+            android:id="@+id/action_detail_to_form"
+            app:destination="@id/productFormFragment" />
+    </fragment>
+
+    <!--
+        US06 / US07: formulario compartido.
+        productJson == null  -> crear producto
+        productJson != null  -> editar el producto serializado en JSON (campos precargados)
+    -->
+    <fragment
+        android:id="@+id/productFormFragment"
+        android:name="com.example.fakestoreapp.ui.form.ProductFormFragment"
+        android:label=""
+        tools:layout="@layout/fragment_product_form">
+
+        <argument
+            android:name="productJson"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 
 </navigation>

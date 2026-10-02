@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.fakestoreapp.R
+import com.example.fakestoreapp.data.api.RetrofitClient
 import com.example.fakestoreapp.data.session.CartManager
 import com.example.fakestoreapp.data.session.SessionManager
 import com.example.fakestoreapp.databinding.ActivityMainBinding
@@ -37,6 +38,10 @@ class MainActivity : AppCompatActivity() {
             goToLogin()
             return
         }
+
+        // US06/US07/US08: el guardia de red (AdminGuardInterceptor) consulta el rol local en
+        // cada petición para bloquear POST/PUT/DELETE de productos a quien no sea Administrador.
+        RetrofitClient.roleProvider = { sessionManager.getRole() }
 
         // Obtener la referencia al NavController desde el FragmentContainerView
         val navHostFragment = supportFragmentManager

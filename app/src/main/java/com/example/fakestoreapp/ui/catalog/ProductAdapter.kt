@@ -13,11 +13,13 @@ import java.util.Locale
  * Adaptador basado en ListAdapter + DiffUtil para aprovechar el reciclaje de vistas
  * de RecyclerView (requisito de rendimiento de US03) y animar únicamente los cambios
  * reales cuando el catálogo se filtra (US04).
+ * Toma la lista de productos (List<Product>) y dibuja cada tarjeta de producto (con imagen, título y precio) en el RecyclerView.
  */
 class ProductAdapter(
     private val onProductClick: (Product) -> Unit
 ) : ListAdapter<Product, ProductAdapter.ProductViewHolder>(DiffCallback) {
 
+    //Infla o dibuja el diseño individual de cada tarjeta de producto (item_product.xml).
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val binding = ItemProductBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -26,7 +28,7 @@ class ProductAdapter(
         )
         return ProductViewHolder(binding)
     }
-
+    //Toma el producto de la posición actual y le asigna a la tarjeta la imagen, el título y el precio correspondientes.
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         holder.bind(getItem(position))
     }

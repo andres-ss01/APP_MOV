@@ -43,6 +43,7 @@
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:padding="8dp"
+            android:paddingBottom="88dp"
             tools:listitem="@layout/item_product" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -89,5 +90,21 @@
             android:text="Reintentar"
             app:backgroundTint="@color/primary_green" />
     </LinearLayout>
+
+    <!-- US06: Botón flotante (abajo a la derecha) para agregar un producto.
+         Solo se muestra al rol Administrador (la visibilidad se decide en CatalogFragment). -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/fab_add_product"
+        android:visibility="gone"
+        app:backgroundTint="@color/primary_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="@color/white" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

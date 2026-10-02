@@ -10,3 +10,14 @@ sealed class Resource<out T> {
     data class Error(val message: String) : Resource<Nothing>()
     object Loading : Resource<Nothing>()
 }
+
+/**
+ * Transforma el dato de un Success conservando Error/Loading tal cual.
+ * Útil para convertir la respuesta del repositorio (p. ej. un ID) en el modelo
+ * que necesita la pantalla (un Product completo).
+ */
+inline fun <T, R> Resource<T>.map(transform: (T) -> R): Resource<R> = when (this) {
+    is Resource.Success -> Resource.Success(transform(data))
+    is Resource.Error -> this
+    is Resource.Loading -> this
+}
